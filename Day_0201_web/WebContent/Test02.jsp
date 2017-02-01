@@ -15,12 +15,12 @@
 		out.println("웹 어플리케이션 콘텍스트 경로 :" +request.getContextPath() + "<br/>");
 		out.println("인코딩" + request.getCharacterEncoding() + "<br/>");
 		out.println("파라미터들");
-		Enumeration e = request.getParameterNames();
-		while(e.hasMoreElements()) {
-			String paraName = (String)e.nextElement();
-			out.println("파라미터 이름 : " + paraName + "<br/>");
-			out.println("값 : " + request.getParameter(paraName) + "<br/>");
-		}
+// 		Enumeration e = request.getParameterNames();
+// 		while(e.hasMoreElements()) {
+// 			String paraName = (String)e.nextElement();
+// 			out.println("파라미터 이름 : " + paraName + "<br/>");
+// 			out.println("값 : " + request.getParameter(paraName) + "<br/>");
+		out.println("name : " + request.getParameter("name"));
 	%>
 </body>
 </html>
