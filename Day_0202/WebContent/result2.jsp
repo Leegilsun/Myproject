@@ -14,7 +14,10 @@
 	out.println("<br>");
 	out.println("직업은 " +request.getParameter("job") + "이군요");
 	out.println("<br>");
-	out.println("분야는" +request.getParameter("books") + "이군요");
+	String[] books = request.getParameterValues("books");
+	for(int i=0; i<books.length; i++) {
+		out.println("분야는 " +books[i] + "이군요");
+	}
 	out.println("<br>");
 	out.println("할말은" +request.getParameter("comments") + "이군요");
 %>
