@@ -77,7 +77,7 @@
 			else
 				out.println("<td>" +(int)(jangm[i]+0.5) + "</td>");
 	}
-	else {
+	else if(loan.equals("b")){
 		for(int i =0; i<day; i++){
 			out.println("<tr>");
 			out.println("<td>" + (int)((wongm2[i]+isa2[i])) + "</td>");
