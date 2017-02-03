@@ -10,10 +10,8 @@
 ³ª´Â add
 <br><br>
 <%
-	int num1 = Integer.parseInt(request.getParameter("num1"));
-	int num2 = Integer.parseInt(request.getParameter("num2"));
-	
-	int result = num1 + num2;
+	int result = Integer.parseInt(request.getParameter("result"));
+
 	out.println(result);
 %>
 

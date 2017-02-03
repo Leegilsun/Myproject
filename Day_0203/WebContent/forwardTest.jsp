@@ -13,22 +13,25 @@
 	int num2 = Integer.parseInt(request.getParameter("num2"));
 	String type = request.getParameter("type");
 	String url = "";
+	int result=0;
 	if(type.equals("1"))
 	{
+		result = num1 + num2;
 		url = "add.jsp";
 	}
 	else if(type.equals("2"))
 	{
+		result = num1 - num2;
 		url = "sub.jsp";
 	}
 	else if(type.equals("3"))
 	{
+		result = num1 * num2;
 		url = "mult.jsp";
 	}
 %>
 <jsp:forward page="<%= url %>">
-	<jsp:param value="<%=num1 %>" name="num1"/>
-	<jsp:param value="<%=num2 %>" name="num2"/>	
+	<jsp:param value="<%=result %>" name="result"/>
 </jsp:forward>
 
 <!-- forward될 경우 a.jsp에너나 b.jsp에서나 서로 같은 request객체를 유지하고 있음  -->
