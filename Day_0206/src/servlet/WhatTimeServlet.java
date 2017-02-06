@@ -16,25 +16,15 @@ public class WhatTimeServlet extends HttpServlet{
 	
 	protected void doProc(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Date date = new Date();
-		resp.setContentType("text/html;charset=utf-8");
-		PrintWriter pw = resp.getWriter();	//HTML코드 출력을 위한 객체
-		pw.println("<HTML>");
-		pw.println("<head>");
-		pw.println("<title>");
-		pw.println("현재 시간이에요");
-		pw.println("</title>");
-		pw.println("</head>");
-		pw.println("<body>");
-		pw.println(date);
-		pw.println("</body>");
-		pw.println("</HTML>");
+	
+		req.setAttribute("date", date);
+		req.getRequestDispatcher("module/whatTimeResult.jsp").forward(req, resp);
 	}
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		super.doGet(req, resp);
-		
 		doProc(req, resp);
 	}
 
