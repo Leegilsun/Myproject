@@ -7,11 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form method="get" action="addProc.do">
-<input type="text" name="num1">
-<br><br>
-<input type="text" name="num2">
-<input type="submit" value="전송" /> <input type="reset" value="취소" />
-</form>
+<%
+	int result = (int)request.getAttribute("result");
+
+	out.println(result);
+%>
 </body>
 </html>
