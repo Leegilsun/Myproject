@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,19 +9,25 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.MemberDao;
-import model.Member;
 
-@WebServlet("/memberSelectAll")
-public class MemberSelectAll extends HttpServlet{
+@WebServlet("/memberLogin")
+public class MemberLogin extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		MemberDao dao = MemberDao.getInstance();
+		String id = req.getParameter("id");
+		String pwd = req.getParameter("pwd");
+		String url = "";
+		if(id.equals(dao.selectOne(id).getId()) && pwd.equals(dao.selectOne(id).getPwd())) {
+			resp.sendRedirect("login_result.jsp");
+		}
+		else {
+			req.getRequestDispatcher("memberServlet?type=loginfalse").forward(req, resp);
+		}
 		
-		List<Member> list = dao.selectAll();
 		
-		req.setAttribute("msg", list);
-		req.getRequestDispatcher("/select/selectAll_result.jsp").forward(req, resp);
 	}
+
 }

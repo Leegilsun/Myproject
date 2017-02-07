@@ -26,7 +26,7 @@ public class MemberDelete extends HttpServlet{
 			dao.deleteMember(member);
 			String msg = "삭제 완료 ";
 			req.setAttribute("msg", msg);
-			req.getRequestDispatcher("memberServlet?type=deleteResult").forward(req, resp);
+			req.getRequestDispatcher("/delete/delete_result.jsp").forward(req, resp);
 	}
 	
 

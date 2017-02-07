@@ -11,5 +11,6 @@
 	String msg = (String)request.getAttribute("msg");
 	out.println(msg);
 %>
+<input type="button" value="메뉴" onclick="location.href='login_result.jsp'">
 </body>
 </html>

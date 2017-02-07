@@ -51,6 +51,12 @@ public class MemberServlet extends HttpServlet{
 		else if(type.equals("selectAllResult")) {
 			url += "../select/selectAll_result.jsp";
 		}
+		else if(type.equals("login")) {
+			url += "../login.jsp";
+		}
+		else if(type.equals("loginfalse")) {
+			url += "../login.jsp";
+		}
 		req.setAttribute("url", url);
 		req.getRequestDispatcher("main/memberTest.jsp").forward(req, resp);
 		

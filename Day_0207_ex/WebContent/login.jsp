@@ -4,12 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>로그인</title>
 </head>
 <body>
-<form action="<%=application.getContextPath() %>/memberSelectAll" name="frm">
-전체 조회하러 ㄱㄱ
-<input type="submit" value="전송">
+<form action="memberLogin">
+<input type="text" name="id">id
+<input type="text" name="pwd">login
+<input type="submit" value="로그인">
 </form>
 </body>
 </html>

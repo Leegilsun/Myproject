@@ -27,7 +27,7 @@ public class MemberUpdate extends HttpServlet{
 			dao.updateMember(name, member);
 			String msg = "수정 완료 ";
 			req.setAttribute("msg", msg);
-			req.getRequestDispatcher("memberServlet?type=updateResult").forward(req, resp);
+			req.getRequestDispatcher("/update/update_result.jsp").forward(req, resp);
 	}
 
 }

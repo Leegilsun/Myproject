@@ -18,7 +18,7 @@ function check(){
 </script>
 </head>
 <body>
-<form action="memberDelete" name="frm">
+<form action="<%=application.getContextPath() %>/memberDelete" name="frm">
 <input type="text" name="id">삭제할 id<br>
 <input type="submit" value="전송" onclick="return check()">
 </form>

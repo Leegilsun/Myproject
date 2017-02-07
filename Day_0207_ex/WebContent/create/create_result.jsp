@@ -4,12 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>회원 가입 성공</title>
 </head>
 <body>
 <%
 	String msg = (String) request.getAttribute("msg");
 	out.println(msg);
 %>
+<input type="button" value="로그인" onclick="location.href='login.jsp'">
 </body>
 </html>

@@ -18,7 +18,7 @@ function check(){
 </script>
 </head>
 <body>
-<form action="memberSelect" name="frm">
+<form action="<%=application.getContextPath() %>/memberSelect" name="frm">
 <input type="text" name="id">조회 할 id<br>
 <input type="submit" value="전송" onclick="return check()">
 </form>

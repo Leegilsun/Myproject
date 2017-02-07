@@ -23,7 +23,7 @@ function check(){
 </script>
 </head>
 <body>
-<form action="memberUpdate" name="frm">
+<form action="<%= application.getContextPath() %>/memberUpdate" name="frm">
 <input type="text" name="id">정보 수정할 id<br>
 <input type="text" name="name">바꾸고 싶은 name<br>
 <input type="submit" value="전송" onclick="return check()">

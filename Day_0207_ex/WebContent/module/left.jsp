@@ -8,9 +8,6 @@
 </head>
 <body>
 <a href="<%=application.getContextPath() %>/memberServlet?type=create">회원가입</a> <br>
-<a href="<%=application.getContextPath() %>/memberServlet?type=update">정보수정</a> <br>
-<a href="<%=application.getContextPath() %>/memberServlet?type=delete">회원삭제</a> <br>
-<a href="<%=application.getContextPath() %>/memberServlet?type=select">회원조회</a> <br>
-<a href="<%=application.getContextPath() %>/memberServlet?type=selectAll">전체회원조회</a> <br>
+<a href="<%=application.getContextPath() %>/memberServlet?type=login">로그인</a> <br>
 </body>
 </html>

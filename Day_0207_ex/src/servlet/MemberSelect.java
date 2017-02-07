@@ -24,7 +24,7 @@ public class MemberSelect extends HttpServlet{
 			Member member = dao.selectOne(id);
 			String msg = member.toString();
 			req.setAttribute("msg", msg);
-			req.getRequestDispatcher("memberServlet?type=selectResult").forward(req, resp);
+			req.getRequestDispatcher("/select/select_result.jsp").forward(req, resp);
 	}
 	
 }

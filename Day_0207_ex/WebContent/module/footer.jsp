@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>여기는 footer.jsp입니다.</h3>
+<h3>길선 월드~</h3>
 </body>
 </html>

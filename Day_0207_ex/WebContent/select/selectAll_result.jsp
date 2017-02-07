@@ -15,5 +15,6 @@
 		out.println(list.get(i).toString()+"<br>");
 	}
 %>
+<input type="button" value="메뉴" onclick="location.href='login_result.jsp'">
 </body>
 </html>
