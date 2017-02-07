@@ -8,6 +8,6 @@
 </head>
 <body>
 	<img 
-	src="<%= application.getContextPath()%>/img/header.jpeg">
+	src="<%= application.getContextPath()%>/img/ss.PNG">
 </body>
 </html>
