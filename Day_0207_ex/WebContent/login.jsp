@@ -9,7 +9,7 @@
 <body>
 <form action="memberLogin">
 id : <input type="text" name="id">
-pwd : <input type="text" name="pwd">
+pwd : <input type="password" name="pwd">
 <input type="submit" value="로그인">
 </form>
 </body>
