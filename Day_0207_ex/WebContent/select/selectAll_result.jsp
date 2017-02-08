@@ -10,11 +10,26 @@
 </head>
 <body>
 <%
-	List<Member> list = (List) request.getAttribute("msg");
+	List<Member> list = (List<Member>) request.getAttribute("msg");
+%>
+<table border="1">
+<tr>
+<th>아이디</th>
+<th>이름</th>
+<th>삭제</th>
+</tr>
+<%
 	for(int i=0; i<list.size(); i++) {
-		out.println(list.get(i).toString()+"<br>");
+%>
+<tr>
+<td><%=list.get(i).getId()%></td>
+<td><%=list.get(i).getName()%></td>
+<td><input type="button" value="삭제" id="button<%=i %>" onclick="location.href='<%=application.getContextPath() %>/delete_one.jsp'"></td>
+</tr>
+<% 
 	}
 %>
+</table>
 <input type="button" value="메뉴" onclick="location.href='login_result.jsp'">
 </body>
 </html>
