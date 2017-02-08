@@ -24,7 +24,7 @@
 <tr>
 <td><%=list.get(i).getId()%></td>
 <td><%=list.get(i).getName()%></td>
-<td><input type="button" value="삭제" id="button<%=i %>" onclick="location.href='<%=application.getContextPath() %>/delete_one.jsp'"></td>
+<td><input type="button" value="삭제" id="button<%=i %>" onclick="location.href='<%=application.getContextPath() %>/memberDelete?type=<%=list.get(i).getId() %>'"></td>
 </tr>
 <% 
 	}
