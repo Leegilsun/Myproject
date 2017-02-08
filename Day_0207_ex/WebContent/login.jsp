@@ -8,8 +8,8 @@
 </head>
 <body>
 <form action="memberLogin">
-<input type="text" name="id">id
-<input type="text" name="pwd">login
+id : <input type="text" name="id">
+pwd : <input type="text" name="pwd">
 <input type="submit" value="로그인">
 </form>
 </body>
