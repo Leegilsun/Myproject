@@ -4,15 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>재고 삭제</title>
+<title>재고 삭제 실패</title>
 </head>
 <body>
 <center>
-<h3>재고 삭제</h3><hr>
-<form action="<%=application.getContextPath() %>/delete">
-상품 코드 : <input type="text" name="code"><br>
-<input type="submit" value="확인">&nbsp;<input type="button" value="메뉴" onclick="location.href='<%=application.getContextPath() %>/main/main.jsp'">
-</form>
+<h3>재고 삭제 실패</h3><hr>
+<%
+	String msg = (String)request.getAttribute("msg");
+	out.println(msg);
+%>
 </center>
 </body>
 </html>

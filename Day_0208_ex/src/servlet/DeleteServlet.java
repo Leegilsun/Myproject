@@ -15,16 +15,26 @@ import model.Stock;
 public class DeleteServlet extends HttpServlet{
 	protected void doProc(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		Stock stock = new Stock();
+		String code = req.getParameter("code");	
 		StockDao dao = StockDao.getInstance();
-		String code = req.getParameter("code");
-		
-		stock.setCode(code);
-		dao.deleteStock(stock);
-		
-		String msg = "삭제가 완료되었습니다.";
-		req.setAttribute("msg", msg);
-		req.getRequestDispatcher("/delete/delete_complete.jsp").forward(req, resp);
+		Stock stock = dao.selectCode(code);
+		System.out.println(stock.getCode());
+		if(stock != null) {
+			if(stock.getCode().equals(code)) {
+				dao.deleteStock(stock);
+				String msg = "삭제가 완료되었습니다.";
+				req.setAttribute("msg", msg);
+				req.getRequestDispatcher("/delete/delete_complete.jsp").forward(req, resp);
+			} else {
+				String msg = "존재하지 않는 상품 코드 입니다.";
+				req.setAttribute("msg", msg);
+				req.getRequestDispatcher("/delete/delete_false.jsp").forward(req, resp);
+			}
+		} else {
+			String msg = "존재하지 않는 상품 코드 입니다.";
+			req.setAttribute("msg", msg);
+			req.getRequestDispatcher("/delete/delete_false.jsp").forward(req, resp);
+		}
 	}
 
 	@Override

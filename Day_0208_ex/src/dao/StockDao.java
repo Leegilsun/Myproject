@@ -51,6 +51,40 @@ public class StockDao {
 		}
 	}
 	
+	public Stock selectCode(String code) {
+		Stock stock = null;
+		String sql = "select * from stock where code=?";
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			pstmt = connection.prepareStatement(sql);
+			pstmt.setString(1, code);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				stock = new Stock();
+				stock.setCode(rs.getString("code"));
+				stock.setName(rs.getString("name"));
+				stock.setCnt(rs.getInt("cnt"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				if(rs != null)
+					rs.close();
+				if(pstmt != null)
+					pstmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return stock;
+	}
+	
 	public List<Stock> selectAll() {
 		List<Stock> list = new ArrayList<Stock>();
 		String sql = "select * from stock";
