@@ -16,11 +16,12 @@ public class DeleteServlet extends HttpServlet{
 	protected void doProc(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String code = req.getParameter("code");	
-		StockDao dao = StockDao.getInstance();
-		Stock stock = dao.selectCode(code);
-		System.out.println(stock.getCode());
-		if(stock != null) {
-			if(stock.getCode().equals(code)) {
+		String type = req.getParameter("type");
+		StockDao dao = StockDao.getInstance();		
+		
+		if(type == null){
+			Stock stock = dao.selectCode(code);
+			if(dao.selectCode(code) != null) {
 				dao.deleteStock(stock);
 				String msg = "삭제가 완료되었습니다.";
 				req.setAttribute("msg", msg);
@@ -30,11 +31,21 @@ public class DeleteServlet extends HttpServlet{
 				req.setAttribute("msg", msg);
 				req.getRequestDispatcher("/delete/delete_false.jsp").forward(req, resp);
 			}
-		} else {
-			String msg = "존재하지 않는 상품 코드 입니다.";
-			req.setAttribute("msg", msg);
-			req.getRequestDispatcher("/delete/delete_false.jsp").forward(req, resp);
 		}
+		else if(code == null) {
+			Stock stock = dao.selectCode(type);
+			if(dao.selectCode(type) != null) {
+				stock.setCode(type);
+				dao.deleteStock(stock);
+				String msg = "삭제가 완료되었습니다.";
+				req.setAttribute("msg", msg);
+				req.getRequestDispatcher("/delete/delete_complete.jsp").forward(req, resp);
+			} else {
+				String msg = "존재하지 않는 상품 코드 입니다.";
+				req.setAttribute("msg", msg);
+				req.getRequestDispatcher("/delete/delete_false.jsp").forward(req, resp);
+			}
+		} 
 	}
 
 	@Override

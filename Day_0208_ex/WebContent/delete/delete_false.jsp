@@ -13,6 +13,8 @@
 	String msg = (String)request.getAttribute("msg");
 	out.println(msg);
 %>
+<br>
+<input type="button" value="메뉴" onclick="location.href='<%=application.getContextPath() %>/main/main.jsp'">
 </center>
 </body>
 </html>
