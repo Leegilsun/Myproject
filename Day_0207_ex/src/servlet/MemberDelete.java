@@ -20,10 +20,19 @@ public class MemberDelete extends HttpServlet{
 		Member member = new Member();
 		MemberDao dao = MemberDao.getInstance();
 		
+			String type = req.getParameter("type");
+		
 			String id = req.getParameter("id");
 			
-			member.setId(id);
-			dao.deleteMember(member);
+			if(type == null) {
+				member.setId(id);
+				dao.deleteMember(member);
+				
+			}
+			else if(id == null) {
+				member.setId(type);
+				dao.deleteMember(member);
+			}
 			String msg = "삭제 완료 ";
 			req.setAttribute("msg", msg);
 			req.getRequestDispatcher("/delete/delete_result.jsp").forward(req, resp);
