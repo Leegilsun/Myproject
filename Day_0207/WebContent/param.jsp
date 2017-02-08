@@ -7,7 +7,7 @@
 <title>서블릿</title>
 <script type="text/javascript">
 	function check(){
-		if(document.frm.id.value == "") {
+		if(document.frm.num.value == "") {
 			alert("아이디를 입력하세요");
 			document.frm.id.focus();
 			return false;

@@ -7,11 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form method="get" action="elect_Proc.jsp">
-전기사용량 : <input type="text" name="use"/>
-<input type="submit" value="½ÅÃ»" /> <input type="reset" value="Ãë¼Ò" />
-</form>
-
-</form>
+<%
+	String str= (String)request.getAttribute("date");
+	out.println(str);
+%>
 </body>
 </html>

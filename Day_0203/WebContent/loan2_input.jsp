@@ -9,7 +9,7 @@
 <body>
 <center>
 		<form action="loan_result.jsp">
-			<table>
+			<table border="1">
 				<tr>
 					<td align="center">대출 원금</td>
 					<td><input type="text" name="amount"></td>

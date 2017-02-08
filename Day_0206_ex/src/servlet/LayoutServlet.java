@@ -20,7 +20,7 @@ public class LayoutServlet extends HttpServlet{
 			} else if(type.equals("hello")) {
 				url += "../hello/hello.jsp";
 			} else if(type.equals("whatTime")) {
-				url += "../whatTime.jsp";
+				url += "../whatTime/whatTime.jsp";
 			}
 		}
 		req.setAttribute("url", url);

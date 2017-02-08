@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -15,17 +14,9 @@ public class WhatTimeServlet extends HttpServlet{
 
 	protected void doProc(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Date date = new Date();
-		PrintWriter pw = resp.getWriter();//HTML코드 출력을 위한 객체
-		pw.println("<HTML>");
-		pw.println("<head>");
-		pw.println("<title>");
-		pw.println("제목이야ㅠㅠ");
-		pw.println("</title>");
-		pw.println("</head>");
-		pw.println("<body>");
-		pw.println(date);
-		pw.println("</body>");
-		pw.println("</HTML>");
+		
+		req.setAttribute("date", date);
+		req.getRequestDispatcher("whatTime/whatTimeResult.jsp").forward(req, resp);
 	}
 	
 	@Override
