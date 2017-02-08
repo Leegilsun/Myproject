@@ -7,11 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
+	String id = request.getParameter("type");
+%>
 로그인 성공 <br>
 <a href="<%=application.getContextPath() %>/update/update_input.jsp">정보수정</a> <br>
 <a href="<%=application.getContextPath() %>/delete/delete_input.jsp">회원삭제</a> <br>
 <a href="<%=application.getContextPath() %>/select/select_input.jsp">회원조회</a> <br>
 <a href="<%=application.getContextPath() %>/select/selectAll_input.jsp">전체회원조회</a> <br>
-<input type="button" value="로그아웃" onclick="location.href='<%=application.getContextPath() %>/main/memberTest.jsp'">
+<input type="button" value="로그아웃" onclick="location.href='<%=application.getContextPath() %>/logout.jsp'">
 </body>
 </html>

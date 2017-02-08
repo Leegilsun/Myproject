@@ -11,6 +11,10 @@
 <body>
 <%
 	List<Member> list = (List<Member>) request.getAttribute("msg");
+	Cookie[] cookies = request.getCookies();
+	if(!(cookies.length>1)){
+		response.sendRedirect("memberServlet?type=loginfalse");
+	}
 %>
 <table border="1">
 <tr>

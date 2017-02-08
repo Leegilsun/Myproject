@@ -9,7 +9,7 @@
 <body>
 <%
 	String url = (String) request.getAttribute("url");
-
+	Cookie[] cookies = request.getCookies();
 	if(url == null)
 		url = "../main/hi.jsp";
 %>
