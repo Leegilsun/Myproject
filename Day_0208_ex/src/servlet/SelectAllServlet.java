@@ -14,7 +14,7 @@ import dao.StockDao;
 import model.Stock;
 
 @WebServlet("/selectall")
-public class SelectServlet extends HttpServlet{
+public class SelectAllServlet extends HttpServlet{
 	protected void doProc(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		StockDao dao = StockDao.getInstance();
