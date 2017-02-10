@@ -8,6 +8,9 @@ public class Member {
 		this.name=name;
 		this.userid=userid;
 	}
+	public Member() {
+		
+	}
 	
 	public String getName() {
 		return name;

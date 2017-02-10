@@ -26,4 +26,6 @@ public class MemberServlet extends HttpServlet{
 		req.getRequestDispatcher("09_el.jsp").forward(req, resp);
 	}
 
+	
+	
 }
