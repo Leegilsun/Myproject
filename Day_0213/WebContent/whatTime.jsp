@@ -8,5 +8,12 @@
 </head>
 <body>
 현재 시간은 ${date }
+
+<c:if test="${date.hour <12 }">
+오전입니다.
+</c:if>
+<c:if test="${date.hour >12 }">
+오후입니다.
+</c:if>
 </body>
 </html>
