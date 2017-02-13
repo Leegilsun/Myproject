@@ -27,4 +27,13 @@
   	<servlet-name>WhatTime2</servlet-name>
   	<url-pattern>/whatTime2.do</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>MemberList</servlet-name>
+  	<servlet-class>servlet.MemberListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>MemberList</servlet-name>
+  	<url-pattern>/memberList.do</url-pattern>
+  </servlet-mapping>
 </web-app>
