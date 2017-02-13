@@ -8,8 +8,18 @@
 <title>memberList</title>
 </head>
 <body>
-<c:forEach var="list" items="${list }">
-${list }<br>
-</c:forEach> 
+<table border="1">
+<tr>
+<th>index</th>
+<th>count</th>
+<th>name</th>
+</tr>
+
+<c:forEach var="list" items="${list }" varStatus="status">
+<tr>
+<td>${status.index }</td> <td>${status.count }</td> <td>${list.name }</td>
+</tr>
+</c:forEach>
+</table>
 </body>
 </html>
