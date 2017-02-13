@@ -18,4 +18,13 @@
   	<servlet-name>WhatTime</servlet-name>
   	<url-pattern>/whatTime.do</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>WhatTime2</servlet-name>
+  	<servlet-class>servlet.WhatTimeServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>WhatTime2</servlet-name>
+  	<url-pattern>/whatTime2.do</url-pattern>
+  </servlet-mapping>
 </web-app>
