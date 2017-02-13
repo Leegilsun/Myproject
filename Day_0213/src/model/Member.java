@@ -25,7 +25,7 @@ public class Member {
 	}
 	@Override
 	public String toString() {
-		return "아이디 : " +id+ " 	이름 : " +name+ "회원님";
+		return "아이디 : " +id+ " 	이름 : " +name;
 	}
 
 	
