@@ -7,6 +7,7 @@ public class Member {
 	private String email;
 	private String phone;
 	private int admin;
+	
 	public String getName() {
 		return name;
 	}
@@ -43,6 +44,8 @@ public class Member {
 	public void setAdmin(int admin) {
 		this.admin = admin;
 	}
+	
+	
 	
 	@Override
 	public String toString() {
