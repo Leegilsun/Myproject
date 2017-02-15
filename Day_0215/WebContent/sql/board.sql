@@ -1,17 +1,17 @@
-drop table board;
+ï»¿drop table board;
 
 create table  if not exists board(num int primary key auto_increment, pass varchar(30), name varchar(30), 
 email varchar(30), title varchar(50), content varchar(1000), readcount int ,writedate date);
 
-insert into board values(0,"1234","ÀÌ±æ¼±","pjjwjwth@naver.com","¿öÇÁ·¹¿¡¿¡ÀÓ","°°ÀÌÇÒ·¡?",0,now());
+insert into board values(0,"1234","ì´ê¸¸ì„ ","pjjwjwth@naver.com","ì›Œí”„ë ˆì—ì—ì„","ê°™ì´í• ë˜?",0,now());
 
-insert into board values(0,"1234","ÀüÇöÁØ","ddoddoria@naver.com","¾Æ´Ï¾ÈÇØ","ÀÀ ¾ÈÇØ",0,now());
+insert into board values(0,"1234","ì „í˜„ì¤€","ddoddoria@naver.com","ì•„ë‹ˆì•ˆí•´","ì‘ ì•ˆí•´",0,now());
 
-insert into board values(0,"1234","ÀÀÀÀÀ×À×","doia@naver.com","³­ÇØ","¿ÀÅ° µé¾î¿À¼À",0,now());
+insert into board values(0,"1234","ì‘ì‘ì‰ì‰","doia@naver.com","ë‚œí•´","ì˜¤í‚¤ ë“¤ì–´ì˜¤ì…ˆ",0,now());
 
-insert into board values(0,"1234","»ş¶ö¶ö¶ó","adsada@naver.com","´Ù¸¥°ÅÇÏÀÚ","¿öÅ©¾î¶¶?",0,now());
+insert into board values(0,"1234","ìƒ¤ë„ë„ë¼","adsada@naver.com","ë‹¤ë¥¸ê±°í•˜ì","ì›Œí¬ì–´ë–°?",0,now());
 
-insert into board values(0,"1234","Å©¶ó¶ó¶ô","zmfkfda@naver.com","³»°¡ 5µî","¾Æ´Ï 1µîÀÎ°¡?",0,now());
+insert into board values(0,"1234","í¬ë¼ë¼ë½","zmfkfda@naver.com","ë‚´ê°€ 5ë“±","ì•„ë‹ˆ 1ë“±ì¸ê°€?",0,now());
 
 select * from board;
 
