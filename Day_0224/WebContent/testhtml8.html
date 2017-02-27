@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function(){
+	var header = document.getElementById('header');
+	header.addEventListener('click', function(e) {
+		alert('으힛!');	
+		header.removeEventListener('click',handler);//이벤트 제거
+	});
+}
+</script>
+</head>
+<body>
+<h1 id="header">아힝으힝</h1>
+</body>
+</html>

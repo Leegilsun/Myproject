@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function(){
+	var bnt1 = document.getElementById('bnt1');
+	var btn2 = document.getElementById('btn2');
+	var cnt1 = document.getElementById('cnt1');
+	var cnt2 = document.getElementById('cnt2');
+	
+	btn1.onclick = function(){
+		cnt1.innerHTML = Number(cnt1.innerHTML)+1;
+	}
+	btn2.onclick = function(){
+		cnt1.innerHTML = Number(cnt1.innerHTML)+1;
+		cnt2.innerHTML = Number(cnt2.innerHTML)+1;
+	}
+
+}
+</script>
+</head>
+<body>
+<button id="btn1">눌러줘</button>
+<button id="btn2">아니야 날 눌러</button>
+<h1>첫번째 버튼 눌럿엉? : <span id="cnt1">0</span></h1>
+<h1>두번째 버튼 눌럿엉? : <span id="cnt2">0</span></h1>
+</body>
+</html>
