@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.a {
+	border: solid red 5px
+}
+
+span {
+	width: 150px;
+	color: red;
+}
+
+input {
+	border: solid gray 1px
+}
+
+table {
+	width: 100%
+}
+
+th, td {
+	border: 1px gray solid;
+	text-align: center;
+	padding: 3px
+}
+
+h2 {
+	text-align: center
+}
+</style>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+	integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	crossorigin="anonymous"></script>
+<script type="text/javascript">
+function createList(){
+	//테이블 안에 있는 tr을 지울건데 맨 위 첫줄은 빼고....
+	var table = $('#listTable');
+	$('tr:gt(0)', table).remove();
+	var cnt= 0;
+	$.ajax({
+		url : 'list.do',
+		dataType : 'json',
+		type : 'get',
+		success : function(data){
+			for(var i in data){
+				var btn = $(' <input type="button" value="삭제" id="deletebtn' +i+ '">');
+				
+				var tr = $('<tr>');
+				$('<td>').text(data[i].no).appendTo(tr);
+				$('<td>').text(data[i].id).appendTo(tr);
+				$('<td>').text(data[i].name).appendTo(tr);
+				$('<td>').text(data[i].age).appendTo(tr);
+				$('<td>').text(data[i].tel).appendTo(tr);
+				$('<td>').text(data[i].addr).appendTo(tr);
+				$('<td>').append(btn).appendTo(tr);
+				table.append(tr);
+				
+				(function(e) {
+					var id = data[i].id;
+					btn.on('click', function(){
+						$.ajax({
+							url : 'delete.do',
+							data : 'id='+id,
+							dataType :'json',
+							type : 'post',
+							success : function(data){
+//									alert(data.result);
+								if(data.result)
+									createList();
+							}
+						});
+					});
+				})(i);
+			}
+		}
+	});
+}
+	$(document).ready(function(){
+		
+		createList();
+		
+		
+		$('#joinBtn').on('click', function(){
+			var params = $('#inForm').serialize();
+// 			alert(params);
+			$.ajax({
+				url : 'join.do',
+				data : params,
+				dataType : 'json',
+				type : 'post',
+				success : function(data){
+// 					alert(data.result);
+					if(data.result){
+						createList();
+					}
+				}
+			});
+		});
+		$('#id').on('blur', function(){
+			$.ajax({
+				url : 'idCheck.do',
+				data : 'id=' + $(this).val(),
+				dataType : 'json',
+				type : 'post',
+				success : function(data){
+// 					alert(data.result);
+					if(data.result){
+						$('#isDupli').text('가입하셔도됨ㅇㅇ');
+					}
+					else{
+						$('#isDupli').text('님 그거 중뷁ㅋ');
+						$('#id').focus();
+					}
+				}
+			});
+		});
+	});
+ </script>
+</head>
+<body>
+
+	<form name="inForm" method="post" id="inForm">
+		<table cellspacing="0">
+			<tr bgcolor="pink">
+				<th>아이디</th>
+				<th>이름</th>
+				<th>나이</th>
+				<th>전화번호</th>
+				<th>주소</th>
+			</tr>
+			<tr>
+				<td style="text-align: left"><input type="text" size="8"
+					name="id" id="id"> <span id="isDupli">중복결과여부</span></td>
+				<td><input type="text" size="8" name="name" id="name"></td>
+				<td><input type="text" size="4" name="age" id="age"></td>
+				<td><input type="text" size="12" name="tel" id="tel"></td>
+				<td><input type="text" size="30" name="addr" id="addr"></td>
+			</tr>
+			<tr>
+				<td colspan="5" align="center"><input type="button"
+				id="joinBtn"
+					value="가입하기" id="btn"></td>
+			</tr>
+		</table>
+	</form>
+		<br>
+		<hr color="red">
+
+		<h2>고객 리스트 !</h2>
+		<table id="listTable" cellspacing="0">
+			<tr bgcolor="pink">
+				<th>번호</th>
+				<th>아이디</th>
+				<th>이름</th>
+				<th>나이</th>
+				<th>전화번호</th>
+				<th>주소</th>
+				<th>삭제</th>
+			</tr>
+		</table>
+</body>
+</html>
+
+
+
+
+
+
